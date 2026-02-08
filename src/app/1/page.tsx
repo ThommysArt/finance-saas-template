@@ -1,5 +1,5 @@
-import { LandingTemplate } from '@/components/landing/landing-template';
+import { PageOneLanding } from '@/components/variants/page-one';
 
 export default function PageOne() {
-  return <LandingTemplate />;
+  return <PageOneLanding />;
 }
