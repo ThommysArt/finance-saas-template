@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowUpRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { AnimatedButton } from '@/components/landing/interactive';
 
 export function Hero() {
   const cardStackRef = useRef<HTMLDivElement>(null);
@@ -34,14 +34,14 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="bg-[#050505] text-white">
+    <section id="products" className="bg-[#050505] text-white reveal">
       <div className="grid-overlay">
         <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 pb-20 pt-8 md:grid-cols-[1.1fr_0.9fr] md:pt-12">
           <div>
             <p className="mb-5 text-xs uppercase tracking-[0.2em] text-zinc-400">Trusted protection and expert guidance</p>
             <h1 className="display-font text-5xl leading-[0.9] md:text-8xl">SECURE YOUR FINANCIAL FUTURE</h1>
             <p className="mt-6 max-w-xs text-sm text-zinc-300">Trusted Protection and Expert Guidance for your Finances.</p>
-            <Button size="lg" className="mt-8">GET STARTED <ArrowUpRight className="h-4 w-4" /></Button>
+            <div className="mt-8"><AnimatedButton label="GET STARTED" /></div>
 
             <div className="mt-10">
               <p className="text-xs text-zinc-400">● Active Users</p>

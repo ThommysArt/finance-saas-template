@@ -1,7 +1,12 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { AnimatedButton, AnimatedNavLink } from '@/components/landing/interactive';
 
-const navItems = ['Products', 'Features', 'Benefits', 'Partners'];
+const navItems = [
+  { label: 'Products', href: '#products' },
+  { label: 'Features', href: '#features' },
+  { label: 'Benefits', href: '#benefits' },
+  { label: 'Partners', href: '#partners' },
+];
 
 export function Navbar() {
   return (
@@ -11,13 +16,13 @@ export function Navbar() {
         finguard
       </Link>
 
-      <ul className="hidden items-center gap-8 text-xs text-zinc-300 md:flex">
+      <ul className="hidden items-center gap-8 md:flex">
         {navItems.map((item) => (
-          <li key={item} className="transition-colors hover:text-white">{item}</li>
+          <li key={item.label}><AnimatedNavLink href={item.href} label={item.label} /></li>
         ))}
       </ul>
 
-      <Button variant="outline" className="border-white/30 text-xs">Sign up ↗</Button>
+      <AnimatedButton label="Sign up" className="h-10 bg-transparent border border-white/35 px-5" />
     </nav>
   );
 }
